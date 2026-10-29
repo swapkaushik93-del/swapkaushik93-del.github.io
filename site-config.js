@@ -1,13 +1,11 @@
-/*
-  Edit these values before publishing the site.
-  Leave a field as an empty string if you don't want that button to appear.
-  For your résumé, put the PDF in the site folder (or an assets folder) and use its relative path.
-*/
+/* Public-facing settings for your portfolio. Keep this file free of secrets. */
 window.SITE_CONFIG = {
-  ownerName: "Swapnil",
-  brandName: "Oddly Useful",
-  linkedinUrl:
-"https://www.linkedin.com/in/swapnil-kaushik-0451b2b5/",
+  ownerName: "Swapnil Kaushik",
+  brandName: "Signal & Craft",
+  linkedinUrl: "https://www.linkedin.com/in/swapnil-kaushik-0451b2b5/",
   email: "swap.kaushik93@gmail.com",
-  resumeUrl: "https://swapkaushik93-del.github.io/Swapnil_Kaushik_PM.pdf"
+  resumeUrl: "assets/Swapnil-Kaushik-Resume.pdf",
+  madridDecodedUrl: "",
+  location: "India",
+  showResume: true
 };

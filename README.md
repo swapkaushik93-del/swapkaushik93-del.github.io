@@ -1,30 +1,32 @@
-# Oddly Useful — personal portfolio (v2)
+# Signal & Craft — personal portfolio
 
-A responsive, single-page portfolio for program delivery, forecasting and analytics, practical AI automation, and independent creative projects. Built with plain HTML, CSS, and JavaScript: no framework, build step, paid theme, or subscription required.
+A responsive editorial-style personal portfolio for Swapnil Kaushik. Built with plain HTML, CSS and JavaScript. No build step, framework, paid theme or subscription is required.
 
-## Preview locally
+## Before uploading
 
-1. Keep `index.html` and `site-config.js` in the same folder.
-2. Double-click `index.html` to open it in a browser. An internet connection is needed for optional Google Fonts; the layout still works without them.
+1. Review the public résumé at `assets/Swapnil-Kaushik-Resume.pdf`. Anyone can view it once published in this public repository. Remove the PDF and set `showResume: false` in `site-config.js` if you do not want it public.
+2. Edit `site-config.js` to change the brand, LinkedIn URL, email and résumé path.
+3. The creative project section currently links to YouTube's homepage because no verified Madrid Decoded channel URL was supplied. Replace that `href` in `index.html` with the actual public channel or project URL before sharing widely.
+4. Review the case studies and remove any details that may be confidential or subject to employer policies. The copy intentionally avoids internal system names and sensitive workflow specifics.
 
-## Personalise before publishing
+## Deploy to the existing GitHub Pages site
 
-Open `site-config.js` and set: 
+Keep the repository name `swapkaushik93-del.github.io` and the existing Pages settings. Upload the **contents of this folder** to the repository root, preserving the `assets` folder structure. Commit to `main`. GitHub Pages should redeploy automatically.
 
-- `linkedinUrl`: your LinkedIn profile URL
-- `email`: an email address you want published
-- `resumeUrl`: a relative path such as `assets/Swapnil-Resume.pdf` after placing the résumé PDF there
+Required structure:
 
-These contact fields are deliberately blank so nothing personal is published without your choice. Review the public copy carefully and keep internal employer systems, confidential figures, and non-public project details out of the site.
+```text
+index.html
+site-config.js
+README.md
+assets/
+  Swapnil-Kaushik-Resume.pdf
+```
 
-## Publish free with GitHub Pages
+## Brand direction
 
-1. Create or sign in to a GitHub account.
-2. Create a **public** repository named exactly `YOUR-USERNAME.github.io`.
-3. Upload `index.html`, `site-config.js`, and this README (plus your résumé PDF only if you want it public).
-4. In the repository, open **Settings → Pages**. Choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-5. The website will be available at `https://YOUR-USERNAME.github.io` after deployment completes.
+Current working brand: **Signal & Craft** — suggests finding the meaningful signal in complexity and building thoughtful, practical systems. Alternatives worth considering: **Fieldnotes by Swapnil**, **Useful by Design**, **The Thinking Build**, **Between Systems**, and **Work in Progress**. Check domain availability and possible existing trademarks before settling on a name.
 
-## Add a custom domain later
+## Privacy
 
-You can keep the same free hosting and connect a domain you register later (for example, a chosen `.in` domain). In **Settings → Pages → Custom domain**, enter the domain and follow GitHub's current DNS instructions with your registrar. Domain registration/renewal is separate from hosting.
+GitHub Pages requires this website repository to be public on GitHub Free. All committed files are public. Do not add secrets, private work data, internal dashboards, credentials or non-public company materials.
