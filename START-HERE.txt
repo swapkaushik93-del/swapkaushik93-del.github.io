@@ -1,0 +1,15 @@
+ODDLY USEFUL — PUBLISHING PACKAGE
+
+Files:
+- index.html       Main website
+- site-config.js   Add LinkedIn, contact email, and résumé link here
+- README.md        Step-by-step publishing instructions
+
+PREVIEW:
+Open index.html in Chrome or Edge to preview locally.
+
+GITHUB PAGES:
+Upload the 3 files (index.html, site-config.js, README.md) to the ROOT of a public repository named YOUR-USERNAME.github.io.
+Then open Settings > Pages, choose Deploy from a branch, select main and /(root), and Save.
+
+Before publishing, edit site-config.js and add only contact details you are comfortable making public.

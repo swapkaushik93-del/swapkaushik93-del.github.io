@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f1e9">
+  <meta name="description" content="Swapnil Kaushik — program delivery, forecasting and analytics, practical AI automation, and creative projects.">
+  <title>Oddly Useful — Swapnil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f3f1e9;
+      --ink: #171915;
+      --muted: #686b61;
+      --line: #d5d4ca;
+      --acid: #d5fb47;
+      --blue: #234bea;
+      --card: #e9e7dd;
+      --mono: "DM Mono", monospace;
+      --sans: "DM Sans", sans-serif;
+      --display: "Space Grotesk", sans-serif;
+      --wrap: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    .wrap { width: min(var(--wrap), calc(100% - 48px)); margin: 0 auto; }
+    .mono { font: 500 11px/1.5 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .topline { min-height: 38px; background: var(--ink); color: var(--paper); display: flex; align-items: center; }
+    .topline .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .topline span:last-child { color: #c7c9bf; }
+    header { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--line); background: rgba(243,241,233,.92); backdrop-filter: blur(14px); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; gap: 12px; align-items: center; font: 700 14px/1 var(--display); letter-spacing: -.02em; }
+    .brandmark { height: 35px; width: 35px; border: 1px solid var(--ink); display: grid; place-items: center; background: var(--acid); font: 700 12px var(--mono); transform: rotate(-5deg); }
+    nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); }
+    nav a { font-size: 12px; color: #44473f; transition: color .2s; }
+    nav a:hover { color: var(--blue); }
+    .nav-cta { border: 1px solid var(--ink); padding: 12px 15px; font-weight: 600; color: var(--ink); }
+    .nav-cta:hover { background: var(--ink); color: var(--paper); }
+
+    .hero { padding: 74px 0 62px; border-bottom: 1px solid var(--line); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); gap: 50px; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; }
+    .live-dot { height: 8px; width: 8px; background: var(--blue); border-radius: 50%; box-shadow: 0 0 0 4px rgba(35,75,234,.10); }
+    h1 { font: 600 clamp(48px, 7.4vw, 93px)/.97 var(--display); letter-spacing: -.075em; margin: 0; max-width: 800px; }
+    h1 .line-two { display: block; }
+    h1 em { font-style: normal; position: relative; white-space: nowrap; }
+    h1 em::after { content: ""; position: absolute; z-index: -1; left: -.015em; right: -.04em; bottom: .035em; height: .31em; background: var(--acid); transform: rotate(-1.5deg); }
+    .hero-bottom { margin-top: 30px; max-width: 620px; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+    .hero-copy { max-width: 455px; color: #55584f; font-size: 16px; line-height: 1.75; margin: 0; }
+    .hero-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 27px; }
+    .button { min-height: 48px; padding: 0 17px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 1px solid var(--ink); font-size: 12px; font-weight: 700; transition: transform .18s, background .18s, color .18s; }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--ink); color: var(--paper); }
+    .button.primary:hover { background: var(--blue); border-color: var(--blue); }
+    .button.secondary:hover { background: var(--acid); }
+    .arrow { font-size: 16px; line-height: 1; }
+
+    .hero-art { position: relative; min-height: 360px; background: var(--ink); color: var(--paper); overflow: hidden; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; isolation: isolate; }
+    .hero-art::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(243,241,233,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(243,241,233,.1) 1px, transparent 1px); background-size: 26px 26px; mask-image: linear-gradient(145deg, black, transparent 85%); }
+    .art-top { display: flex; justify-content: space-between; align-items: flex-start; color: #bcbfb5; }
+    .art-index { border: 1px solid #54574f; width: 33px; height: 33px; display: grid; place-items: center; font: 11px var(--mono); }
+    .orbit { position: absolute; width: 220px; height: 220px; border: 1px solid #62665c; border-radius: 50%; top: 65px; left: 50%; transform: translateX(-50%); }
+    .orbit::before, .orbit::after { content: ""; position: absolute; border: 1px solid #62665c; border-radius: 50%; inset: 27px; }
+    .orbit::after { inset: 58px; }
+    .orbit-core { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(10deg); width: 86px; height: 86px; background: var(--acid); color: var(--ink); display: grid; place-items: center; font: 700 24px var(--display); box-shadow: 0 0 0 8px rgba(213,251,71,.10); }
+    .orbit-node { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--blue); border: 2px solid var(--paper); }
+    .node-a { top: 24px; left: 58px; }.node-b { right: 11px; top: 135px; background: var(--acid); }.node-c { left: 30px; bottom: 18px; }
+    .art-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; position: relative; z-index: 1; }
+    .art-bottom strong { font: 500 27px/1 var(--display); letter-spacing: -.05em; }
+    .art-bottom p { text-align: right; color: #bcbfb5; font: 10px/1.6 var(--mono); margin: 0; text-transform: uppercase; letter-spacing: .08em; }
+    .ticker { overflow: hidden; border-bottom: 1px solid var(--line); }
+    .ticker-line { display: flex; justify-content: space-between; gap: 28px; padding: 17px 0; white-space: nowrap; color: #5a5d53; }
+    .ticker span { font: 11px var(--mono); text-transform: uppercase; letter-spacing: .09em; }
+    .ticker b { color: var(--blue); font-weight: 400; }
+
+    section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; margin-bottom: 43px; }
+    .section-label { color: var(--blue); margin: 0 0 13px; }
+    h2 { font: 600 clamp(34px, 4.6vw, 57px)/1.04 var(--display); letter-spacing: -.065em; max-width: 670px; margin: 0; }
+    .section-aside { max-width: 270px; margin: 3px 0 0; font-size: 14px; line-height: 1.75; color: var(--muted); }
+    .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); }
+    .work-card { min-height: 330px; padding: 25px; display: flex; flex-direction: column; border-right: 1px solid var(--line); background: rgba(255,255,255,.14); transition: background .2s; }
+    .work-card:last-child { border-right: 0; }
+    .work-card:hover { background: var(--card); }
+    .work-top { display: flex; justify-content: space-between; align-items: center; color: var(--muted); }
+    .work-number { font: 11px var(--mono); }
+    .work-symbol { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--ink); font: 20px var(--display); transform: rotate(-5deg); }
+    .work-card:nth-child(2) .work-symbol { background: var(--acid); }
+    .work-card:nth-child(3) .work-symbol { background: var(--blue); color: white; border-color: var(--blue); }
+    .work-card h3 { font: 600 25px/1.12 var(--display); letter-spacing: -.045em; margin: 46px 0 13px; }
+    .work-card p { font-size: 13px; line-height: 1.8; color: #5a5d53; margin: 0 0 25px; }
+    .work-foot { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .work-foot .tag { color: var(--blue); }
+
+    .manifesto { background: var(--acid); border-bottom: 1px solid var(--ink); }
+    .manifesto .section-label { color: #414d10; }
+    .manifesto-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: 55px; }
+    .manifesto h2 { max-width: 450px; }
+    .manifesto-items { border-top: 1px solid rgba(23,25,21,.28); }
+    .manifesto-item { padding: 21px 0; border-bottom: 1px solid rgba(23,25,21,.28); display: grid; grid-template-columns: 46px 1fr; gap: 14px; }
+    .manifesto-item .number { font: 11px var(--mono); padding-top: 5px; }
+    .manifesto-item h3 { font: 600 20px var(--display); margin: 0 0 6px; letter-spacing: -.035em; }
+    .manifesto-item p { font-size: 13px; line-height: 1.7; max-width: 490px; margin: 0; color: #383d2c; }
+
+    .now-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .now-card { padding: 28px; border: 1px solid var(--line); min-height: 230px; }
+    .now-card.dark { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .now-card .mono { color: var(--blue); }
+    .now-card.dark .mono { color: var(--acid); }
+    .now-card h3 { font: 600 27px/1.1 var(--display); letter-spacing: -.05em; margin: 24px 0 12px; }
+    .now-card p { font-size: 13px; line-height: 1.8; color: var(--muted); max-width: 430px; margin: 0; }
+    .now-card.dark p { color: #c2c5b9; }
+
+    .about-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 60px; }
+    .about-stamp { aspect-ratio: 1; max-width: 245px; background: var(--blue); color: white; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transform: rotate(-3deg); }
+    .about-stamp strong { font: 600 clamp(42px, 6vw, 72px)/.9 var(--display); letter-spacing: -.08em; }
+    .about-stamp span { font: 10px/1.7 var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    .about-copy h2 { margin-bottom: 24px; }
+    .about-copy p { max-width: 650px; font-size: 16px; line-height: 1.9; color: #56594f; margin: 0 0 16px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .chip { border: 1px solid var(--line); padding: 9px 11px; font: 10px var(--mono); text-transform: uppercase; letter-spacing: .055em; }
+
+    .contact { padding: 100px 0 40px; }
+    .contact-panel { background: var(--ink); color: var(--paper); padding: clamp(28px, 5vw, 62px); position: relative; overflow: hidden; }
+    .contact-panel::after { content: "↗"; position: absolute; right: -12px; bottom: -100px; color: #2b2e27; font: 300 360px/.8 var(--display); pointer-events: none; }
+    .contact-panel .section-label { color: var(--acid); }
+    .contact-panel h2 { position: relative; z-index: 1; max-width: 800px; font-size: clamp(40px, 6.4vw, 78px); }
+    .contact-panel p { max-width: 480px; color: #c2c5b9; line-height: 1.8; font-size: 14px; position: relative; z-index: 1; }
+    .contact-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; position: relative; z-index: 2; }
+    .contact-actions .button { border-color: var(--paper); color: var(--paper); }
+    .contact-actions .button.primary { background: var(--acid); border-color: var(--acid); color: var(--ink); }
+    .contact-actions .button:hover { background: var(--blue); color: white; border-color: var(--blue); }
+    .contact-actions:empty { display: none; }
+    .contact-hint { font: 10px/1.6 var(--mono) !important; color: #898d80 !important; margin-top: 18px; }
+    footer { padding: 28px 0 34px; }
+    .footer-line { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-line p { font: 10px/1.7 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0; }
+    .backtop { font: 10px var(--mono); text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      .hero-art { min-height: 330px; max-width: 520px; width: 100%; }
+      .hero { padding-top: 54px; }
+      .section-head { display: block; }
+      .section-aside { margin-top: 18px; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card { min-height: 275px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .work-card:last-child { border-bottom: 0; }
+      .work-card h3 { margin-top: 35px; }
+      .manifesto-grid, .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-stamp { max-width: 190px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(var(--wrap), calc(100% - 32px)); }
+      .topline .wrap { font-size: 9px; }
+      .nav { min-height: 66px; }
+      .brand { font-size: 12px; gap: 8px; }
+      .brandmark { width: 30px; height: 30px; }
+      nav { gap: 12px; }
+      nav a { font-size: 11px; }
+      nav a:nth-child(2), nav a:nth-child(3) { display: none; }
+      .nav-cta { padding: 10px 11px; }
+      .hero { padding: 42px 0 45px; }
+      h1 { font-size: clamp(46px, 14vw, 72px); }
+      .hero-bottom { display: block; margin-top: 22px; }
+      .hero-copy { font-size: 14px; }
+      .hero-art { min-height: 300px; padding: 20px; }
+      .orbit { top: 45px; }
+      .ticker-line { justify-content: flex-start; gap: 22px; }
+      section { padding: 70px 0; }
+      .now-grid { grid-template-columns: 1fr; }
+      .contact { padding-top: 70px; }
+      .contact-panel { padding: 27px 22px; }
+      .contact-panel::after { font-size: 250px; right: -8px; bottom: -70px; }
+      .footer-line { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <div class="wrap"><span class="mono">Programs · data · practical AI</span><span class="mono">Professional work / experiments / side projects</span></div>
+  </div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Oddly Useful home"><span class="brandmark">O/U</span><span id="brand-name">ODDLY USEFUL</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#work">The work</a><a href="#now">The lab</a><a href="#about">About</a><a class="nav-cta" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow mono"><span class="live-dot"></span> PROGRAMS × ANALYTICS × PRACTICAL AI</p>
+          <h1>I turn complex work<br>into <em>useful systems.</em></h1>
+          <div class="hero-bottom">
+            <p class="hero-copy">Program delivery, forecasting and analytics, and practical AI automation—alongside creative projects and experiments that keep me curious. A portfolio of work, ideas and things worth building.</p>
+          </div>
+          <div class="hero-links"><a class="button primary" href="#work">Explore the work <span class="arrow">↘</span></a><a class="button secondary" href="#contact">Start a conversation <span class="arrow">↗</span></a></div>
+        </div>
+        <div class="hero-art" aria-label="Abstract graphic representing systems and experiments">
+          <div class="art-top"><span class="mono">A living index</span><span class="art-index">01</span></div>
+          <div class="orbit"><span class="orbit-node node-a"></span><span class="orbit-node node-b"></span><span class="orbit-node node-c"></span><div class="orbit-core">O/U</div></div>
+          <div class="art-bottom"><strong>Observe.<br>Connect. Build.</strong><p>Less noise.<br>More useful things.</p></div>
+        </div>
+      </div>
+    </section>
+    <div class="ticker"><div class="wrap ticker-line"><span>Program delivery <b>✳</b> Analytics</span><span>Practical AI <b>✳</b> Automation</span><span>Creative projects <b>✳</b> Sidequests</span><span>Build / Learn / Improve</span></div></div>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="section-label mono">01 / What I work on</p><h2>Different challenges.<br>One common thread: make complexity actionable.</h2></div>
+          <p class="section-aside">I like work that connects clear thinking with execution: understand the signal, design the mechanism, test it, and make the next decision easier.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-top"><span class="work-number">01 — AUTOMATE</span><span class="work-symbol" aria-hidden="true">⌘</span></div>
+            <h3>AI workflows<br>& useful automation.</h3>
+            <p>Designing multi-step AI workflows for recurring analysis, reporting and planning—combining orchestration with checks, review points and human control.</p>
+            <div class="work-foot"><span class="tag">AI / automation</span></div>
+          </article>
+          <article class="work-card">
+            <div class="work-top"><span class="work-number">02 — DELIVER</span><span class="work-symbol" aria-hidden="true">↗</span></div>
+            <h3>Programs that<br>move from plan to done.</h3>
+            <p>Cross-functional launch readiness, operating rhythms and governance. Led readiness for five product launches with zero missed launch dates, coordinating across product, training and operations teams.</p>
+            <div class="work-foot"><span class="tag">Program delivery</span></div>
+          </article>
+          <article class="work-card">
+            <div class="work-top"><span class="work-number">03 — ANALYZE</span><span class="work-symbol" aria-hidden="true">↘</span></div>
+            <h3>Forecasting, variance<br>& better decisions.</h3>
+            <p>Working from forecast-versus-actual signals to ranked deviations, root-cause follow-up and review-ready reporting that helps teams decide what to do next.</p>
+            <div class="work-foot"><span class="tag">Forecasting & analytics</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" aria-labelledby="manifesto-title">
+      <div class="wrap manifesto-grid">
+        <div><p class="section-label mono">02 / How I work</p><h2 id="manifesto-title">Build for the real world.<br>Keep judgment in the loop.</h2></div>
+        <div class="manifesto-items">
+          <article class="manifesto-item"><span class="number">01</span><div><h3>Find the signal in the noise.</h3><p>Understand what changed, what matters, and where effort will have the highest impact before rushing into execution.</p></div></article>
+          <article class="manifesto-item"><span class="number">02</span><div><h3>Automate the repeatable.</h3><p>Build mechanisms that make recurring work clearer and more reliable, not black boxes that are difficult to verify.</p></div></article>
+          <article class="manifesto-item"><span class="number">03</span><div><h3>Keep humans in the loop.</h3><p>Use automation to prepare and accelerate decisions, while keeping verification and accountability explicit.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="now">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="section-label mono">03 / In the lab and beyond</p><h2>Current work.<br>Open questions.</h2></div>
+          <p class="section-aside">An evolving list, not a claim to have it all figured out. The point is to keep learning in public and build a little more each time.</p>
+        </div>
+        <div class="now-grid">
+          <article class="now-card dark"><span class="mono">In progress / 01</span><h3>AI workflows people can trust.</h3><p>Exploring agents and automation for analysis, reporting and planning, with verification gates, explainable outputs and useful human review.</p></article>
+          <article class="now-card"><span class="mono">In progress / 02</span><h3>Forecasting and better decisions.</h3><p>Finding practical ways to turn forecast-versus-actual signals into clearer diagnosis, follow-through and review-ready decisions.</p></article>
+          <article class="now-card"><span class="mono">In progress / 03</span><h3>Everyday friction, worth fixing.</h3><p>Collecting observations from daily life and asking whether a simple mechanism, service or product could make the experience better.</p></article>
+          <article class="now-card"><span class="mono">Always on / 04</span><h3>Football, history and storytelling.</h3><p>Developing Madrid Decoded around Real Madrid’s legendary players, eras and stories—with longer-form publishing as a future direction.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-stamp"><span>PROGRAMS<br>MEET PRACTICAL AI</span><strong id="owner-stamp">Swapnil.</strong><span>Hyderabad, India<br>Open to interesting problems</span></div>
+        <div class="about-copy"><p class="section-label mono">04 / A little context</p><h2>Program delivery, data and AI.<br>With an operator’s perspective.</h2><p>I’m Swapnil, a Program Manager with 10 years of professional experience, including 9+ years at Amazon. My current work sits across forecasting and variance analytics, cross-functional delivery and practical AI automation.</p><p>I enjoy taking ambiguous, data-heavy or repetitive work and building a clearer path through it: identify the signal, align the people involved, create a reliable mechanism and make the result easier to act on. My earlier years in technical support and operations shaped that approach; they are part of the foundation, not the whole story.</p><div class="chips"><span class="chip">Program delivery</span><span class="chip">Forecasting & analytics</span><span class="chip">Agentic AI</span><span class="chip">Automation & governance</span><span class="chip">Creative publishing</span></div></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <p class="section-label mono">05 / The next good conversation</p>
+          <h2>Working on something complex? Let’s make it clearer.</h2>
+          <p>I’m interested in practical AI, thoughtful program delivery, useful experiments and ideas that make a real difference. Reach out to compare notes or talk through a problem worth solving.</p>
+          <div class="contact-actions" id="contact-actions"></div>
+          <p class="contact-hint" id="contact-hint">Contact links can be added in site-config.js before publishing.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-line"><p>© <span id="year"></span> Swapnil · Oddly Useful</p><p>Made for curiosity. Built to evolve.</p><a class="backtop" href="#top">Back to top ↑</a></div>
+  </footer>
+  <script src="site-config.js"></script>
+  <script>
+    (function () {
+      const cfg = window.SITE_CONFIG || {};
+      const name = cfg.ownerName || "Swapnil";
+      const brand = cfg.brandName || "Oddly Useful";
+      document.title = brand + " — " + name;
+      document.getElementById("brand-name").textContent = brand.toUpperCase();
+      document.getElementById("owner-stamp").textContent = name + ".";
+      document.querySelector('meta[name="description"]').setAttribute("content", "Program delivery, forecasting and analytics, practical AI automation, and creative projects by " + name + ".");
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const links = [];
+      if (cfg.linkedinUrl) links.push({ label: "Connect on LinkedIn", href: cfg.linkedinUrl, primary: true, external: true });
+      if (cfg.email) links.push({ label: "Email me", href: "mailto:" + cfg.email, primary: false, external: false });
+      if (cfg.resumeUrl) links.push({ label: "View résumé", href: cfg.resumeUrl, primary: false, external: true });
+      const holder = document.getElementById("contact-actions");
+      links.forEach(function (item) {
+        const a = document.createElement("a");
+        a.className = "button " + (item.primary ? "primary" : "secondary");
+        a.href = item.href;
+        a.textContent = item.label;
+        if (item.external) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+        holder.appendChild(a);
+      });
+      if (links.length) document.getElementById("contact-hint").hidden = true;
+    })();
+  </script>
+</body>
+</html>
