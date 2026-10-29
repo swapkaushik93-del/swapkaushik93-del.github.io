@@ -4,7 +4,7 @@ window.SITE_CONFIG = {
   brandName: "Signal & Craft",
   linkedinUrl: "https://www.linkedin.com/in/swapnil-kaushik-0451b2b5/",
   email: "swap.kaushik93@gmail.com",
-  resumeUrl: "assets/Swapnil-Kaushik-Resume.pdf",
+  resumeUrl: "https://swapkaushik93-del.github.io/Swapnil_Kaushik_PM.pdf",
   madridDecodedUrl: "",
   location: "India",
   showResume: true
