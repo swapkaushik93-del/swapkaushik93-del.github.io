@@ -6,7 +6,7 @@
 window.SITE_CONFIG = {
   ownerName: "Swapnil",
   brandName: "Oddly Useful",
-  linkedinUrl: "",
-  email: "",
+  linkedinUrl: "www.linkedin.com/in/swapnil-kaushik-0451b2b5",
+  email: "swap.kaushik93@gmail.com",
   resumeUrl: ""
 };
