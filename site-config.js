@@ -8,5 +8,5 @@ window.SITE_CONFIG = {
   brandName: "Oddly Useful",
   linkedinUrl: "www.linkedin.com/in/swapnil-kaushik-0451b2b5",
   email: "swap.kaushik93@gmail.com",
-  resumeUrl: ""
+  resumeUrl: "https://github.com/swapkaushik93-del/swapkaushik93-del.github.io/blob/b557f682272c674274681e2fd026d5398d37585f/Swapnil_Kaushik_PM.pdf"
 };
